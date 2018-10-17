@@ -19,7 +19,66 @@
 # substituindo apenas o comando print(questão...) existente.
 ##
 def main():
-    print("questao 4")
+    
+ano = int(input("Digite o ano: "))
+mes = int(input("Digite o mês: "))
+dia = int(input("Digite o dia: "))
+
+print('A data digita foi {}-{}-{}'.format(ano, mes, dia))
+
+if (ano % 400 == 0) or (ano % 4 == 0 and ano % 100 != 0):
+    ano_bi = 1
+else:
+    ano_bi = 0
+
+if ano_bi == 1:
+    if(mes == 1) or (mes == 3) or (mes == 5) or (mes == 7) or (mes == 8) or (mes == 10) or (mes == 12):
+        if dia == 31:
+            dia = 1
+            if mes == 12:
+                mes = 1
+                ano += 1
+            else:
+                mes += 1
+        else:
+            dia += 1
+            print('A data seguinte será: {}-{}-{}'.format(ano, mes, dia))
+    else:
+        if (dia == 29) and (mes == 2):
+            dia = 1
+            mes += 1
+            print('A data seguinte será: {}-{}-{}'.format(ano, mes, dia))
+        else:
+            if (dia == 30):
+                dia = 1
+                mes += 1
+            else:
+                dia += 1
+                print('A data seguinte será: {}-{}-{}'.format(ano, mes, dia))
+else:
+    if(dia == 31):
+        dia = 1
+        if(mes == 12):
+            mes = 1
+            ano += 1
+        else:
+            mes += 1
+    else:
+        if(dia == 28) and (mes == 12):
+            dia = 1
+            mes += 1
+        else:
+            if(dia == 30):
+                dia = 1
+                mes += 1
+            else:
+                dia += 1
+                print('A data seguinte será: {}-{}-{}'.format(ano, mes, dia))
+
+
+
+
+
 
 
     
