@@ -37,8 +37,38 @@
 # Para a correta execução do programa, a estrutura atual deve ser mantida,
 # substituindo apenas o comando print(questão...) existente.
 ##
+from math import sqrt
+
 def main():
-    print("questao 2")
+    
+x=0
+y=0
+local = input('Digite o deslocamento desejado: ').upper()
+
+while local:
+
+
+   direc = local[ : local.find(' ')]
+   passos = local[local.find(' ') + 1 : ]
+  #Se a direção indicada for 'baixo', o número digitado irá subtrair o y visto que no plano cartesiano quanto menor o y mais para baixo se localiza o ponto
+   if direc == 'BAIXO':
+       y = y - int(passos)
+  # Se a direção indicada for 'cima', o número digitado irá somar ao y visto que no plano cartesiano quanto maior o y mais para cima se localiza o ponto
+   elif direc == 'CIMA':
+       y = int(passos)+y
+  # Se a direção indicada for 'direita', o número digitado irá somar ao x visto que no plano cartesiano quanto maior o x mais para direita se localiza o ponto
+   elif direc == 'DIREITA':
+       x = int(passos)+x
+  # Se a direção indicada for 'esquerda', o número digitado irá subtrair o x visto que no plano cartesiano quanto menor o x mais para esquerda se localiza o ponto
+   elif direc =='ESQUERDA':
+       x = x - int(passos)
+   local = input('Digite novo deslocamento desejado: ')
+
+  #O programa sairá do loop caso nada seja digitado
+deslocamento = sqrt(x**2 + y**2)
+print(int(deslocamento))
+
+
 
 
     
